@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏥 ClinicCare – Clinic Appointment Management System
 
-## Getting Started
+ClinicCare is a full-stack clinic appointment management system that allows patients to register, log in, view doctors, book appointments, search appointments, sort and paginate appointment records, and cancel appointments.
 
-First, run the development server:
+The system also prevents double-booking of doctors and applies a cancellation fee when an appointment is cancelled less than 2 hours before the scheduled time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 👤 User Registration
+- 🔐 User Login with JWT Authentication
+- 👨‍⚕️ Doctor Management
+- 📅 Book Clinic Appointments
+- 🚫 Prevent Double-Booking
+- 🔍 Search Appointments by Patient Name
+- ↕️ Sort Appointments by Date
+- 📄 Appointment Pagination
+- ❌ Cancel Appointments
+- 💰 Automatic Cancellation Fee Calculation
+- 📊 Dashboard with Appointment Statistics
+- 📱 Responsive Healthcare-Themed UI
+- 🗄️ MongoDB Database Integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
+- Next.js
+- React.js
+- Tailwind CSS
+- JavaScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
+- Next.js App Router API Routes
+- Node.js
+- JWT Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Database
+- MongoDB Atlas
+- Mongoose
 
-## Deploy on Vercel
+### Development Tools
+- Git & GitHub
+- GitHub Codespaces
+- Postman
+- VS Code
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 Project Structure
+
+```text
+clinic-appointment/
+│
+├── app/
+│   ├── api/
+│   │   ├── appointments/
+│   │   │   ├── route.js
+│   │   │   └── [id]/
+│   │   │       └── cancel/
+│   │   │           └── route.js
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   │   └── route.js
+│   │   │   └── register/
+│   │   │       └── route.js
+│   │   │
+│   │   ├── doctors/
+│   │   │   └── route.js
+│   │   │
+│   │   └── test-db/
+│   │       └── route.js
+│   │
+│   ├── dashboard/
+│   │   ├── page.js
+│   │   └── book/
+│   │       └── page.js
+│   │
+│   ├── login/
+│   │   └── page.js
+│   │
+│   ├── register/
+│   │   └── page.js
+│   │
+│   ├── page.js
+│   └── layout.js
+│
+├── lib/
+│   └── db.js
+│
+├── models/
+│   ├── User.js
+│   ├── Doctor.js
+│   └── Appointment.js
+│
+├── public/
+│
+├── .env.local
+├── package.json
+└── README.md
