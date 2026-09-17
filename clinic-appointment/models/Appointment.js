@@ -5,6 +5,7 @@ const appointmentSchema = new mongoose.Schema(
     patientName: {
       type: String,
       required: true,
+      trim: true,
     },
 
     doctorId: {
@@ -25,7 +26,7 @@ const appointmentSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["BOOKED", "CANCELLED"],
+      enum: ["BOOKED", "CANCELLED", "COMPLETED", "NO_SHOW"],
       default: "BOOKED",
     },
 
@@ -33,28 +34,9 @@ const appointmentSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-
-    createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
   },
   {
     timestamps: true,
-  }
-);
-
-// Prevent double booking
-appointmentSchema.index(
-  {
-    doctorId: 1,
-    startTime: 1,
-  },
-  {
-    unique: true,
-    partialFilterExpression: {
-      status: "BOOKED",
-    },
   }
 );
 
