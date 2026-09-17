@@ -53,12 +53,12 @@ export async function POST(request) {
         email: user.email,
       },
     });
-  } catch (error) {
-    console.error(error);
+ } catch (error) {
+  console.error(error);
 
-    return Response.json(
-      { message: "Login failed" },
-      { status: 500 }
-    );
-  }
+  return Response.json(
+    { message: "Login failed" },
+    { status: 500 }
+  );
 }
+  }
